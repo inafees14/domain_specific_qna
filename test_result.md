@@ -101,3 +101,138 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Test the research-first data science startup website 'Axion Research'. This is a static website with frontend-only functionality (no backend integration)."
+
+frontend:
+  - task: "Navigation & Routing"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/Navigation.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to test all navigation links, logo link, mobile hamburger menu, and active page highlighting"
+
+  - task: "Homepage Components"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/HomePage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to test hero section, CTA buttons, Core Capabilities section with SVG graphics, Philosophy section, Our Standards section, and final CTA"
+
+  - task: "Services Page"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/ServicesPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to test all 4 service cards with Problem, Methods Used, Deliverables, and What We Don't Do sections, plus CTA navigation"
+
+  - task: "Research/Blog Page"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/BlogPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to test all 6 blog posts display with tags, dates, excerpts, and navigation to detail pages"
+
+  - task: "Blog Post Detail"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/BlogPostPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to test post content with structured sections, Back to Research button, statistical graphic SVG, and Get in touch button"
+
+  - task: "About Page"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/AboutPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to test all content sections, 3 background cards with icons, lists in Ethical Stance section, and CTA button"
+
+  - task: "Contact Page"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/pages/ContactPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to test form with all fields, validation, submission with toast notification, form clearing, and sidebar info cards"
+
+  - task: "Responsive Design"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to test on desktop (1920px), tablet (768px), and mobile (375px) viewports"
+
+  - task: "Visual Elements"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/StatisticalGraphic.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "testing"
+        comment: "Need to verify SVG statistical graphics display on capability cards, Lucide icons render, and footer displays with social links"
+
+metadata:
+  created_by: "testing_agent"
+  version: "1.0"
+  test_sequence: 1
+
+test_plan:
+  current_focus:
+    - "Navigation & Routing"
+    - "Homepage Components"
+    - "Contact Page"
+    - "Services Page"
+    - "Research/Blog Page"
+    - "Blog Post Detail"
+    - "About Page"
+    - "Responsive Design"
+    - "Visual Elements"
+  stuck_tasks: []
+  test_all: true
+  test_priority: "high_first"
+
+agent_communication:
+  - agent: "testing"
+    message: "Starting comprehensive testing of Axion Research website. This is a frontend-only static website with no backend integration. Will test all navigation, pages, forms, responsive design, and visual elements as specified in the review request."
