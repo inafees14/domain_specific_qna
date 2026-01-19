@@ -37,7 +37,7 @@ Documents are loaded from PDFs, split into semantically coherent chunks, embedde
 **Text Chunking:** Recursive character splitting ensures chunks remain semantically coherent while preserving overlap for contextual continuity. Chunk sizes are tuned differently for structured documents (e.g., resumes) and narrative documents (e.g., books) to prevent semantic leakage across sections.
 
 **Embedding Model:** Sentence-Transformers MiniLM generates dense embeddings. Each chunk $c_i$ is mapped into a vector $\phi(c_i) \in \mathbb{R}^{384}$. Query similarity is computed using cosine similarity:
-$$ \text{sim}(q, c_i) = \frac{\phi(q) \cdot \phi(c_i)}{|\phi(q)| |\phi(c_i)|} $$
+$$\text{sim}(q, c_i) = \frac{\phi(q) \cdot \phi(c_i)}{|\phi(q)| |\phi(c_i)|}$$
 
 **Vector Search:** FAISS performs approximate nearest neighbor retrieval to efficiently select the top-k most relevant chunks for a given query.
 
@@ -53,15 +53,11 @@ $$ \text{sim}(q, c_i) = \frac{\phi(q) \cdot \phi(c_i)}{|\phi(q)| |\phi(c_i)|} $$
 
 ## Mathematical View of the Pipeline
 
-Let the document corpus be ( D = {c_1, c_2, ..., c_n} ). Each chunk is embedded using an encoder ( \phi(\cdot) ). For a query ( q ), the retriever computes similarity scores and selects top-k chunks:
-[
-C_q = \arg\max_{c_i \in D} \text{sim}(q, c_i)
-]
+Let the document corpus be $D = {c_1, c_2, ..., c_n}$. Each chunk is embedded using an encoder $\phi(\cdot)$. For a query $q$, the retriever computes similarity scores and selects top-k chunks:
+$$C_q = \arg\max_{c_i \in D} \text{sim}(q, c_i)$$
 
 The final generation step computes:
-[
-\hat{y} = f_{\theta}(\text{Prompt}(q, C_q))
-]
+$$\hat{y} = f_{\theta}(\text{Prompt}(q, C_q))$$
 subject to strict decoding constraints and token limits.
 
 ---
